@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img src="{{recepieDetail.imagePath}}" style="height:400px" alt="" class="img-responsive">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{recepieDetail.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group"
+    appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle">Manage Recepies
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">To shopping list</a></li>
+        <li><a href="#">Edit Recepie</a></li>
+        <li><a href="#">Delete Recepie</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{recepieDetail.description}}
+  </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{recepieDetail.url}}
+    </div>
+  </div>

@@ -1,0 +1,70 @@
+<!-- Data Binding -->
+<h4>Data Binding</h4>
+{{componentName}} <label>//String interpolation</label>
+<br>
+<button [disabled] = "!allowButton">Button</button> <label>//Property Binding</label>
+<br>
+<button (click)="onButtonClick()">Button</button>  
+<label>{{buttonClicked}}</label> &nbsp;<label>//Event Binding</label>
+<br>
+<input (input)="onButtonClick($event)"><label>//Event Binding</label>
+<br>
+<input type="text" [(ngModel)]="twoWayString"> <label>//Two way Binding</label>
+<br>
+<label>{{twoWayString}}</label>
+<br>
+<p *ngIf="true">This is paragraph  <label>//ng if</label></p>
+<ng-template *ngIf="false; then thenTemplate; else elseTemplate"><p>This will be ignored</p></ng-template>
+<ng-template #thenTemplate>
+    <p>This is if block</p>
+</ng-template>
+<ng-template #elseTemplate>
+    <p>This is else block <label>//ng ifThenElse</label></p>
+</ng-template>
+<br>
+<span [ngSwitch]="switchCaseNumber">
+<p *ngSwitchCase=1>
+    This is switch case 1
+</p>
+<p *ngSwitchCase=4>
+    This is switch case 4<label>//ngSwitch case</label>
+</p>
+<p *ngSwitchDefault>This is default switch
+</p>
+</span>
+<p [ngStyle]="ngStyleEle">This is ng style <label>//ngStyle case</label></p> <!-- Here in case of ngStyleEle, we can also pass css  -->
+<br>
+<p [ngClass]="{h3:isNgClassApply==true}">This is ng class</p> <!-- Here in case of class name, we can also pass css  -->
+<br>
+<div *ngFor="let item of ngForElements">
+    {{item}} <label>// ngFor loop</label>
+</div>
+<br>
+{{dataToChild}} <label>//@Input()</label>
+<br>
+<button (click)="onButton1Click()">@Output example</button> <label>//@Output() in console log</label>
+<br>
+<h3>View encapsulation example <label>//Parent ViewEncapsulation:None so style is global for all </label></h3> 
+<br>
+<input type="text" #input1Data> 
+<button (click)="localReference(input1Data)">Local Reference</button><label>&nbsp;&nbsp; //local reference example , data :{{localReferenceData}}</label>
+<br>
+<label>Getting value of localReference from component Data : {{localReferenceDataComponent}}</label>
+<!-- here input1Data will return html elementReference -->
+<br><br>
+<ng-content></ng-content>
+<ng-content select="section"></ng-content>
+<ng-content select=".selectByClass"></ng-content>
+<br>
+<p appBasicDirective>This is basic directive example</p>
+<p appBasicBetterDirective>This is basic better directive using renderer example</p>
+<br>
+<button (click)="onButton2Click()">Call logging service</button> //This log in console
+<br>
+<button (click)="PassingData()">PassingData</button> //passing data from 1 component to another with service
+
+
+
+
+
+

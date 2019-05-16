@@ -1,0 +1,5 @@
+Documentation - https://docs.angularjs.org/guide
+Filters - https://www.w3schools.com/angular/angular_filters.asp
+Functions in angular - https://docs.angularjs.org/api/ng/function
+Anguler Apis - https://docs.angularjs.org/api
+Routing - https://www.w3schools.com/angular/angular_routing.asp

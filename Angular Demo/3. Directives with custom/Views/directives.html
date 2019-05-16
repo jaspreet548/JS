@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="../app.js"></script>
+	<script type="text/javascript" src="../Controllers/myController.js"></script>
+
+	<style>
+		.sky {
+			color:white;
+			background-color:lightblue;
+			padding:20px;
+			font-family:"Courier New";
+		}
+		.tomato {
+			background-color:coral;
+			padding:40px;
+			font-family:Verdana;
+		}
+</style>
+</head>
+<body>	
+	<div ng-controller='myController'>
+		<!--ng-model-->
+		<input id='txtName' ng-model='name'/>
+		{{name}}
+		</br></br>
+
+		<!--ng-bind-->
+		<!--<input ng-bind='data'/>-->
+		<p ng-bind="paraData"></p>
+
+		<!--ng-click-->
+		<button ng-click="btnClick()">Click</button>
+
+		<!--ng-repeat-->
+		<h4 ng-repeat="x in data">{{x}}</h4>
+
+		<table border="1">
+			<tr ng-repeat="x in records">
+				<td>{{x.Name}}</td>
+				<td>{{x.Country}}</td>
+			</tr>
+		</table>
+		</br></br>
+
+		<!--ng-switch-->
+		<div ng-switch on="case">
+			<div ng-switch-when="1">Shown when case is 1</div>
+			<div ng-switch-when="2">Shown when case is 2</div>
+			<div ng-switch-default>Shown when case is anything else than 1 and 2</div>
+		</div>
+
+		<!--ng-show-->
+		Show Div: <input type="checkbox" ng-model="showDiv">
+		<div ng-show="showDiv">
+			<h3>showing</h3>
+		</div>
+
+		<!--ng-hide-->
+		Hide Div: <input type="checkbox" ng-model="hideDiv">
+		<div ng-hide="hideDiv">
+			<h3>ng-hide</h3>
+		</div>
+
+		<!--ng-if-->
+		Ng-If: <input type="checkbox" ng-model="ngif">
+		<div ng-if="ngif">
+			<h3>div</h3>
+		</div>
+		</br></br>
+
+		<!--ng-blur-->
+		<input ng-blur='onblurFocus("blur")'/>
+
+		<!--ng-focus-->
+		<input ng-focus='onblurFocus("focus")'/>
+
+		<!--ng-class-->
+		<p>Choose a class:</p>
+		<select ng-model="home">
+			<option value="sky">Sky</option>
+			<option value="tomato">Tomato</option>
+		</select>
+
+		<div ng-class="home">
+			<h5>Welcome Home!</h5>
+			<p>I like it!</p>
+		</div>
+
+		<!--ng-copy-->
+		<input ng-copy="count = count + 1" ng-init="count=0" value="Copy this text" />
+		{{count}}
+
+		</br></br>
+		<!--ng-disabled-->
+		<input ng-disabled='true'/>
+
+		<div ng-include="'view1.html'"></div>
+	</div>    
+</body>
+</html>

@@ -1,0 +1,12 @@
+<a href="#" (click)="getCurrentItem()" class="list-group-item clearfix">
+    <div class="pull-left">
+        <h4 class='list-group-item-heading'>{{recepieItem.name}}</h4>
+        <p class="list-group-item-text">{{recepieItem.description}}</p>
+    </div>
+    <span class="pull-right">
+        <img [src]="recepieItem.imagePath"                
+        alt="{{recepieItem.name}}" class="img-responsive" 
+        style="max-height: 50px;"><!-- we are using angular binding src not this src="{{recepieItem.imagePath}}"  -->
+    </span>
+</a>
+<br>

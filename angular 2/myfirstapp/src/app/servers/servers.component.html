@@ -1,0 +1,6 @@
+<app-server [dataToChild]="dataToChild" (messageEvent)='receiveMessage($event)'>
+    <label>This is default ng-content</label>
+    <section><label>This is ng-content rendering by getting section tag</label></section> 
+    <label class='selectByClass'>This is ng-content rendering by getting class name</label><br>
+    <label #contentParagraph>This is local reference in ng-content of parent but comes under default ng-content</label>
+</app-server>
